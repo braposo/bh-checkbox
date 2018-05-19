@@ -13,6 +13,11 @@ export const styles = {
     scale: [4, 8, 16, 24, 32, 40, 72, 120],
 };
 
+export const Main = styled("div")({
+    fontFamily:
+        "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+});
+
 const CheckboxBase = styled("div")(({ checked, disabled }) => {
     return [
         {

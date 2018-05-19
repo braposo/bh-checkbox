@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import CheckboxController from "./CheckboxController";
-import { Checkbox, Label, styles } from "./UI";
+import { Checkbox, Label, Main, styles } from "./UI";
 
 // Let's start with a very simple toggle with the CheckboxController
 // This is testing if it's rendering correctly.
@@ -58,12 +58,16 @@ const CheckboxPrimary = props => <CheckboxBase color={styles.colors.primary} {..
 const CheckboxSecondary = props => <CheckboxBase color={styles.colors.secondary} {...props} />;
 
 const App = () => (
-    <div>
+    <Main>
+        <h5>Text version</h5>
         <CheckboxText />
+        <h5>Native checkbox</h5>
         <CheckboxNative />
+        <h5>Primary checkbox</h5>
         <CheckboxPrimary />
+        <h5>Secondary checkbox</h5>
         <CheckboxSecondary />
-    </div>
+    </Main>
 );
 
 render(<App />, document.getElementById("root"));
