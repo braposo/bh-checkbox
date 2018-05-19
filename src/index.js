@@ -3,6 +3,8 @@ import { render } from "react-dom";
 import CheckboxController from "./CheckboxController";
 import { Checkbox, Label, Main, styles } from "./UI";
 import { Toggle } from "react-powerplug";
+import { Checkbox as AntCheckbox } from "antd";
+import "antd/dist/antd.css";
 
 // Let's start with a very simple toggle with the CheckboxController
 // This is testing if it's rendering correctly.
@@ -58,28 +60,45 @@ const CheckboxPrimary = props => <CheckboxBase color={styles.colors.primary} {..
 // And here's another one with the secondary colour.
 const CheckboxSecondary = props => <CheckboxBase color={styles.colors.secondary} {...props} />;
 
+// It also works if we want to use some UI library component
+// instead. The logic is still in the CheckboxController, but
+// we're rendering other UI elements instead.
+const CheckboxCustom = ({ color, ...rest }) => (
+    <CheckboxController {...rest}>
+        {({ checked, disabled, toggle }) => (
+            <React.Fragment>
+                <AntCheckbox checked={checked} onChange={toggle} disabled={disabled} label="Label">
+                    Label
+                </AntCheckbox>
+            </React.Fragment>
+        )}
+    </CheckboxController>
+);
+
 const App = () => (
     <Main>
-        <h5>Text version</h5>
+        <h4>Text version</h4>
         <CheckboxText />
-        <h5>Native checkbox</h5>
+        <h4>Native checkbox</h4>
         <CheckboxNative />
         <label htmlFor="real-native-checkbox">
             <input type="checkbox" id="real-native-checkbox" />
             Real native
         </label>
-        <h5>Primary checkbox</h5>
+        <h4>Primary checkbox</h4>
         <CheckboxPrimary />
-        <h5>Secondary checkbox</h5>
+        <h4>Secondary checkbox</h4>
         <CheckboxSecondary />
-        <h5>Checkbox disabled</h5>
+        <h4>Checkbox disabled</h4>
         <CheckboxPrimary disabled={true} />
-        <h5>Checkbox checked by default</h5>
+        <h4>Checkbox checked by default</h4>
         <CheckboxSecondary defaultChecked={true} />
-        <h5>Controlled checkbox</h5>
+        <h4>Controlled checkbox</h4>
         <Toggle initial={true}>
             {({ on, toggle }) => <CheckboxPrimary checked={on} onChange={toggle} />}
         </Toggle>
+        <h4>Custom checkbox</h4>
+        <CheckboxCustom />
     </Main>
 );
 

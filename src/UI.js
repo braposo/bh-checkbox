@@ -15,12 +15,13 @@ export const styles = {
 };
 
 export const Main = styled("div")({
+    padding: styles.scale[2],
     fontFamily:
         "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
 });
 
 const AcessibleCheckbox = ({ checked, disabled, ...rest }) => (
-    <div role="checkbox" aria-checked={checked} aria-disabled={disabled} tabindex="0" {...rest} />
+    <div role="checkbox" aria-checked={checked} aria-disabled={disabled} tabIndex="0" {...rest} />
 );
 
 const CheckboxBase = styled(AcessibleCheckbox)(({ checked, disabled }) => {
