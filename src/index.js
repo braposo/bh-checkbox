@@ -78,7 +78,7 @@ const App = () => (
         <CheckboxSecondary defaultChecked={true} />
         <h5>Controlled checkbox</h5>
         <Toggle initial={true}>
-            {({ on, toggle }) => <CheckboxSecondary checked={on} onChange={toggle} />}
+            {({ on, toggle }) => <CheckboxPrimary checked={on} onChange={toggle} />}
         </Toggle>
     </Main>
 );

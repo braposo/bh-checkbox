@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "react-emotion";
 
 export const styles = {
@@ -18,7 +19,11 @@ export const Main = styled("div")({
         "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
 });
 
-const CheckboxBase = styled("div")(({ checked, disabled }) => {
+const AcessibleCheckbox = ({ checked, disabled, ...rest }) => (
+    <div role="checkbox" aria-checked={checked} aria-disabled={disabled} tabindex="0" {...rest} />
+);
+
+const CheckboxBase = styled(AcessibleCheckbox)(({ checked, disabled }) => {
     return [
         {
             width: styles.sizes.medium,
