@@ -49,6 +49,7 @@ class CheckboxController extends React.Component {
 CheckboxController.propTypes = {
     defaultChecked: PropTypes.bool,
     checked: PropTypes.bool,
+    onChange: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.func, PropTypes.array]).isRequired,
 };
 

@@ -67,6 +67,10 @@ const App = () => (
         <CheckboxPrimary />
         <h5>Secondary checkbox</h5>
         <CheckboxSecondary />
+        <h5>Checkbox disabled</h5>
+        <CheckboxPrimary disabled={true} />
+        <h5>Checkbox checked by default</h5>
+        <CheckboxSecondary defaultChecked={true} />
     </Main>
 );
 
