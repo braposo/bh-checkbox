@@ -29,7 +29,6 @@ class CheckboxController extends React.Component {
         // Change internal state if isn't disabled
         if (!this.isDisabled()) {
             const newState = !this.isChecked();
-            console.log("changing", newState);
             this.setState({ checked: newState }, this.props.onChange(newState));
         }
     };
