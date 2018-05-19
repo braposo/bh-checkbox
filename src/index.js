@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import CheckboxController from "./CheckboxController";
 import { Checkbox, Label, Main, styles } from "./UI";
+import { Toggle } from "react-powerplug";
 
 // Let's start with a very simple toggle with the CheckboxController
 // This is testing if it's rendering correctly.
@@ -71,6 +72,10 @@ const App = () => (
         <CheckboxPrimary disabled={true} />
         <h5>Checkbox checked by default</h5>
         <CheckboxSecondary defaultChecked={true} />
+        <h5>Controlled checkbox</h5>
+        <Toggle initial={true}>
+            {({ on, toggle }) => <CheckboxSecondary checked={on} onChange={toggle} />}
+        </Toggle>
     </Main>
 );
 
