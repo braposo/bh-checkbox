@@ -64,6 +64,10 @@ const App = () => (
         <CheckboxText />
         <h5>Native checkbox</h5>
         <CheckboxNative />
+        <label htmlFor="real-native-checkbox">
+            <input type="checkbox" id="real-native-checkbox" />
+            Real native
+        </label>
         <h5>Primary checkbox</h5>
         <CheckboxPrimary />
         <h5>Secondary checkbox</h5>
