@@ -24,7 +24,7 @@ class CheckboxController extends React.Component {
         return this.props.disabled === true;
     }
 
-    //
+    // Toggle checkbox state
     toggleCheckbox = () => {
         // Change internal state if isn't disabled
         if (!this.isDisabled()) {
