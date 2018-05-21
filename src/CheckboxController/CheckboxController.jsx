@@ -46,10 +46,27 @@ class CheckboxController extends React.Component {
 }
 
 CheckboxController.propTypes = {
+    /**
+     * The default value for the checkbox, mostly used
+     * if it's an uncontrolled component
+     */
     defaultChecked: PropTypes.bool,
+    /**
+     * The value for the checkbox. When defined it means
+     * that it's a controlled component so state comes from
+     * its parent
+     */
     checked: PropTypes.bool,
+    /**
+     * The function that is called when values change
+     */
     onChange: PropTypes.func,
-    children: PropTypes.oneOfType([PropTypes.func, PropTypes.array]).isRequired,
+    /**
+     * The child components that are going to be rendered.
+     * Because this implements a render props pattern, it
+     * must be a function.
+     */
+    children: PropTypes.func.isRequired,
 };
 
 CheckboxController.defaultProps = {
