@@ -17,8 +17,8 @@ import { CheckboxPrimary, CheckboxSeconday } from "./Checkbox";
 
 const App = () => (
     <div>
-        <CheckboxPrimary label="My primary label">
-        <CheckboxSecondary label="My secondary label">
+        <CheckboxPrimary label="My primary label" />
+        <CheckboxSecondary label="My secondary label" />
     </div>
 );
 ```
@@ -47,7 +47,7 @@ const CheckboxCustom = ({ label, ...rest }) => (
     <CheckboxController {...rest}>
         {({ checked, disabled, toggle }) => (
             <React.Fragment>
-                <Checkbox checked={checked} onChange={toggle} disabled={disabled} />
+                <Checkbox checked={checked} onChange={toggle} disabled={disabled}>
                     {label}
                 </Checkbox>
             </React.Fragment>
@@ -57,7 +57,7 @@ const CheckboxCustom = ({ label, ...rest }) => (
 
 const App = () => (
     <div>
-        <CheckboxCustom label="My custom label">
+        <CheckboxCustom label="My custom label" />
     </div>
 );
 ```
