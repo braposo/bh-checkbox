@@ -89,9 +89,11 @@ const LabelBase = styled("div")(({ checked, disabled }) => {
             lineHeight: `${styles.sizes.medium}px`,
             verticalAlign: "top",
             fontSize: 14,
+            cursor: "default",
         },
         disabled && {
             opacity: 0.5,
+            cursor: "not-allowed",
         },
     ];
 });
