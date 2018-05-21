@@ -40,13 +40,13 @@ const CheckboxNative = props => (
 // It also highlights the benefits of using the render props pattern
 // as we can easily swap the rendered checkbox and label by other
 // components in the future, keep all the logic intact.
-const CheckboxBase = ({ color, ...rest }) => (
+const CheckboxBase = ({ color, label = "Label", ...rest }) => (
     <CheckboxController {...rest}>
         {({ checked, disabled, toggle }) => (
             <React.Fragment>
                 <Checkbox color={color} checked={checked} onClick={toggle} disabled={disabled} />
                 <Label color={color} onClick={toggle} disabled={disabled}>
-                    Label
+                    {label}
                 </Label>
             </React.Fragment>
         )}
@@ -90,7 +90,7 @@ const App = () => (
         <h4>Secondary checkbox</h4>
         <CheckboxSecondary />
         <h4>Checkbox disabled</h4>
-        <CheckboxPrimary disabled={true} />
+        <CheckboxPrimary disabled={true} label="Primary Checkbox" />
         <h4>Checkbox checked by default</h4>
         <CheckboxSecondary defaultChecked={true} />
         <h4>Controlled checkbox</h4>
